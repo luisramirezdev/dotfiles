@@ -53,7 +53,8 @@
     "context": "EmptyPane || SharedScreen",
     "bindings": {
       "space space": "file_finder::Toggle",
-      "space f p": "projects::OpenRecent"
+      "space f p": "projects::OpenRecent",
+      "f f": "pane::DeploySearch"
     }
   },
   {
