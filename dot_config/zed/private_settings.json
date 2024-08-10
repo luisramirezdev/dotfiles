@@ -44,25 +44,9 @@
     "left_padding": 0.2,
     "right_padding": 0.2
   },
-  // "assistant": {
-  //   "default_model": {
-  //     "provider": "ollama",
-  //     "model": "codegemma:latest"
-  //   },
-  //   "version": "2",
-  //   "provider": null
-  // },
   "inlay_hints": {
     "enabled": false
   },
-  "format_on_save": "on",
   "use_autoclose": true,
-  "formatter": {
-    "code_actions": {
-      "source.fixAll.eslint": true,
-      "source.organizeImports": true
-    }
-  },
-  "languages": {
-  }
+
 }

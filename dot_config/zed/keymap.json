@@ -5,12 +5,7 @@
       "space g h d": "editor::ToggleHunkDiff",
       "space g h r": "editor::RevertSelectedHunks",
       "space t i": "editor::ToggleInlayHints",
-      "space u w": "editor::ToggleSoftWrap",
-      "space c z": "workspace::ToggleCenteredLayout",
-      "space m p": "markdown::OpenPreview",
-      "space m P": "markdown::OpenPreviewToTheSide",
       "space f p": "projects::OpenRecent",
-      "space s w": "pane::DeploySearch",
       "g f": "editor::OpenExcerpts",
       "space e": "workspace::ToggleLeftDock"
     }
@@ -46,7 +41,8 @@
       "s s": "outline::Toggle",
       "s S": "project_symbols::Toggle",
       "space x x": "diagnostics::Deploy",
-      "f f": "pane::DeploySearch"
+      "space f f": "pane::DeploySearch",
+      "space t": "terminal_panel::ToggleFocus"
     }
   },
   {
@@ -54,7 +50,8 @@
     "bindings": {
       "space space": "file_finder::Toggle",
       "space f p": "projects::OpenRecent",
-      "f f": "pane::DeploySearch"
+      "space f f": "pane::DeploySearch",
+      "space t": "terminal_panel::ToggleFocus"
     }
   },
   {
@@ -102,8 +99,7 @@
       "d": "project_panel::Delete",
       "x": "project_panel::Cut",
       "c": "project_panel::Copy",
-      "p": "project_panel::Paste",
-      "q": "workspace::ToggleRightDock"
+      "p": "project_panel::Paste"
     }
   },
   {
