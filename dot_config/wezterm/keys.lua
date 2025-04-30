@@ -93,8 +93,6 @@ function Keys.setup(config)
 		{ key = "q", mods = "ALT", action = wezterm.action.CloseCurrentPane({ confirm = false }) },
 		-- { key = "z", mods = "ALT", action = wezterm.action.TogglePaneZoomState },
 		--   { key = "F11", mods = "", action = wezterm.action.ToggleFullScreen },
-		{ key = "[", mods = "ALT", action = wezterm.action({ ActivateTabRelative = -1 }) },
-		{ key = "]", mods = "ALT", action = wezterm.action({ ActivateTabRelative = 1 }) },
 		--   { key = "{", mods = "SHIFT|ALT", action = wezterm.action.MoveTabRelative(-1) },
 		--   { key = "}", mods = "SHIFT|ALT", action = wezterm.action.MoveTabRelative(1) },
 		--   { key = "y", mods = "ALT", action = wezterm.action.ActivateCopyMode },
@@ -116,6 +114,26 @@ function Keys.setup(config)
 			key = "s",
 			mods = "SUPER",
 			action = wezterm.action({ SendString = "\x13" }), -- \x13 es el código ASCII para Ctrl+S
+		},
+		{
+			key = "c",
+			mods = "CMD",
+			action = wezterm.action({ CopyTo = "Clipboard" }),
+		},
+		{
+			key = "v",
+			mods = "CMD",
+			action = wezterm.action({ PasteFrom = "Clipboard" }),
+		},
+		{
+			key = "RightArrow",
+			mods = "ALT|SHIFT",
+			action = wezterm.action.ActivateTabRelative(1),
+		},
+		{
+			key = "LeftArrow",
+			mods = "ALT|SHIFT",
+			action = wezterm.action.ActivateTabRelative(-1),
 		},
 	}
 end

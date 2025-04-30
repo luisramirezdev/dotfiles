@@ -3,8 +3,10 @@ local wezterm = require("wezterm")
 local Fonts = {}
 
 function Fonts.setup(config)
+	local primary_font = "JetBrains Mono"
+
 	config.font = wezterm.font_with_fallback({
-		"Fira Code",
+		primary_font,
 		"Apple Color Emoji",
 	})
 
@@ -14,7 +16,7 @@ function Fonts.setup(config)
 			italic = true,
 			font = wezterm.font_with_fallback({
 				{
-					family = "Fira Code",
+					family = primary_font,
 					weight = "Bold",
 					italic = true,
 				},
@@ -25,7 +27,7 @@ function Fonts.setup(config)
 			italic = true,
 			font = wezterm.font_with_fallback({
 				{
-					family = "Fira Code",
+					family = primary_font,
 					italic = true,
 				},
 			}),
@@ -35,17 +37,17 @@ function Fonts.setup(config)
 			italic = true,
 			font = wezterm.font_with_fallback({
 				{
-					family = "Fira Code",
+					family = primary_font,
 					weight = "Light",
 					italic = true,
 				},
 			}),
 		},
 	}
-	config.font_size = 14
+	config.font_size = 14.5
 	config.underline_thickness = "200%"
 	config.underline_position = "-3pt"
-	config.line_height = 1.6
+	config.line_height = 1.3
 end
 
 return Fonts
