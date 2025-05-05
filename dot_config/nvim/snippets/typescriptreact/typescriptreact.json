@@ -1,0 +1,15 @@
+{
+  "ReactArrowFunctionComponent": {
+    "prefix": "raf",
+    "body": [
+      "import React from 'react';",
+      "",
+      "export const ${1:ComponentName} = (${2:props}) => {",
+      "  return (",
+      "    ${0}",
+      "  );",
+      "};"
+    ],
+    "description": "[React] Arrow Function Component"
+  }
+}
