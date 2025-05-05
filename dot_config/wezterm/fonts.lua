@@ -3,7 +3,7 @@ local wezterm = require("wezterm")
 local Fonts = {}
 
 function Fonts.setup(config)
-	local primary_font = "JetBrains Mono"
+	local primary_font = "JetBrainsMono Nerd Font Mono"
 
 	config.font = wezterm.font_with_fallback({
 		primary_font,
