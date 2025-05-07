@@ -41,3 +41,8 @@ vim.keymap.set("v", "<A-Down>", ":MoveBlock(1)<CR>", opts)
 vim.keymap.set("v", "<A-Up>", ":MoveBlock(-1)<CR>", opts)
 vim.keymap.set("v", "<A-Left>", ":MoveHBlock(-1)<CR>", opts)
 vim.keymap.set("v", "<A-Right>", ":MoveHBlock(1)<CR>", opts)
+
+-- Copilot
+vim.keymap.set("i", "<Tab>", function()
+  require("copilot.suggestion").accept()
+end, { desc = "Copilot Accept" })

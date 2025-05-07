@@ -1,6 +1,7 @@
 return {
   {
     "neovim/nvim-lspconfig",
+    enabled = true,
     opts = {
       servers = {
         eslint = {},
