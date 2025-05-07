@@ -23,3 +23,22 @@ vim.api.nvim_create_autocmd("User", {
     vim.b.copilot_suggestion_hidden = false
   end,
 })
+
+-- Mostrar archivos usados recientemente
+vim.api.nvim_create_autocmd("User", {
+  pattern = "LazyVimStarted",
+  callback = function()
+    -- No restaurar si ya hay archivos abiertos reales
+    local real_files_open = false
+    for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+      if vim.api.nvim_buf_is_loaded(buf) and vim.api.nvim_buf_get_name(buf) ~= "" then
+        real_files_open = true
+        break
+      end
+    end
+
+    if not real_files_open then
+      require("persistence").load()
+    end
+  end,
+})
