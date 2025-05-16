@@ -1,101 +1,47 @@
 local wezterm = require("wezterm")
-local colors = require("theme").colors
+
+-- Define los colores directamente
+local colors = {
+	iris = "#c4a7e7",
+	foam = "#9ccfd8",
+	pine = "#31748f",
+	gold = "#f6c177",
+	rose = "#eb6f92",
+	love = "#ebbcba",
+	highlight_high = "#ffffff",
+}
 
 local Tab = {}
 
 local function get_process(tab)
 	local PROCESS_ICONS = {
 		["docker"] = {
-			{ Foreground = { Color = colors.blue } },
-			{ Text = "󰡨" },
-		},
-		["docker-compose"] = {
-			{ Foreground = { Color = colors.blue } },
+			{ Foreground = { Color = colors.iris } },
 			{ Text = "󰡨" },
 		},
 		["nvim"] = {
-			{ Foreground = { Color = colors.green } },
+			{ Foreground = { Color = colors.foam } },
 			{ Text = "" },
 		},
-		["bob"] = {
-			{ Foreground = { Color = colors.blue } },
-			{ Text = "" },
-		},
-		["vim"] = {
-			{ Foreground = { Color = colors.green } },
-			{ Text = "" },
-		},
-		["node"] = {
-			{ Foreground = { Color = colors.green } },
-			{ Text = "󰋘" },
-		},
 		["zsh"] = {
-			{ Foreground = { Color = colors.peach } },
+			{ Foreground = { Color = colors.pine } },
 			{ Text = "" },
 		},
 		["bash"] = {
-			{ Foreground = { Color = colors.overlay1 } },
+			{ Foreground = { Color = colors.pine } },
 			{ Text = "" },
 		},
-		["htop"] = {
-			{ Foreground = { Color = colors.yellow } },
-			{ Text = "" },
-		},
-		["btop"] = {
-			{ Foreground = { Color = colors.rosewater } },
-			{ Text = "" },
-		},
-		["cargo"] = {
-			{ Foreground = { Color = colors.peach } },
-			{ Text = wezterm.nerdfonts.dev_rust },
-		},
-		["go"] = {
-			{ Foreground = { Color = colors.sapphire } },
-			{ Text = "" },
+		["node"] = {
+			{ Foreground = { Color = colors.foam } },
+			{ Text = "󰋘" },
 		},
 		["git"] = {
-			{ Foreground = { Color = colors.peach } },
-			{ Text = "󰊢" },
-		},
-		["lazygit"] = {
-			{ Foreground = { Color = colors.mauve } },
+			{ Foreground = { Color = colors.pine } },
 			{ Text = "󰊢" },
 		},
 		["lua"] = {
-			{ Foreground = { Color = colors.blue } },
+			{ Foreground = { Color = colors.iris } },
 			{ Text = "" },
-		},
-		["wget"] = {
-			{ Foreground = { Color = colors.yellow } },
-			{ Text = "󰄠" },
-		},
-		["curl"] = {
-			{ Foreground = { Color = colors.yellow } },
-			{ Text = "" },
-		},
-		["gh"] = {
-			{ Foreground = { Color = colors.mauve } },
-			{ Text = "" },
-		},
-		["flatpak"] = {
-			{ Foreground = { Color = colors.blue } },
-			{ Text = "󰏖" },
-		},
-		["dotnet"] = {
-			{ Foreground = { Color = colors.mauve } },
-			{ Text = "󰪮" },
-		},
-		["paru"] = {
-			{ Foreground = { Color = colors.mauve } },
-			{ Text = "󰣇" },
-		},
-		["yay"] = {
-			{ Foreground = { Color = colors.mauve } },
-			{ Text = "󰣇" },
-		},
-		["fish"] = {
-			{ Foreground = { Color = colors.peach } },
-			{ Text = "" },
 		},
 	}
 
@@ -105,12 +51,12 @@ local function get_process(tab)
 		return wezterm.format(PROCESS_ICONS[process_name])
 	elseif process_name == "" then
 		return wezterm.format({
-			{ Foreground = { Color = colors.red } },
+			{ Foreground = { Color = colors.love } },
 			{ Text = "󰌾" },
 		})
 	else
 		return wezterm.format({
-			{ Foreground = { Color = colors.blue } },
+			{ Foreground = { Color = colors.iris } },
 			{ Text = string.format("[%s]", process_name) },
 		})
 	end
@@ -150,7 +96,7 @@ function Tab.setup(config)
 
 	wezterm.on("format-tab-title", function(tab)
 		return wezterm.format({
-			{ Text = "  " },
+			{ Text = " " },
 			{ Attribute = { Intensity = "Half" } },
 			{ Text = string.format("%s", tab.tab_index + 1) },
 			"ResetAttributes",
@@ -158,8 +104,7 @@ function Tab.setup(config)
 			{ Text = get_process(tab) },
 			{ Text = " " },
 			{ Text = get_current_working_dir(tab) },
-			{ Foreground = { Color = colors.base } },
-			{ Text = " ▕" },
+			{ Text = " " },
 		})
 	end)
 end
